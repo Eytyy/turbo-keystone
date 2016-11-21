@@ -1,0 +1,92 @@
+.logo {
+  a {
+    color: $yellow;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .contact & a {
+    color: $blue;
+  }
+}
+
+.inner,
+.contact {
+  .nav-toggle {
+    display: block;
+    margin-bottom: 20px;
+    .dash {
+      background: $yellow;
+      width: 20px;
+      height: 3px;
+      display: block;
+      &:nth-child(2) {
+        margin: 3px 0;
+      }
+    }
+  }
+  .website-navigation {
+    transform: translateX(-100%);
+    transition: transform 0.2s linear;
+    display: block;
+    width: 0;
+    overflow: hidden;
+    .nav__item {
+      opacity: 0;
+      transition: opacity 0.5s linear;
+    }
+  }
+  @include respond-to(medium) {
+    .nav-toggle {
+      display: none;
+    }
+    .website-navigation {
+      width: auto;
+      transform: translate(0);
+      .nav__item {
+        opacity: 1;
+      }
+    }
+  }
+}
+.contact .nav-toggle .dash {
+  background: $blue;
+}
+
+.website-navigation {
+  color: $yellow;
+  .contact & {
+    color: $blue;
+  }
+}
+
+.nav__item {
+  text-transform: capitalize;
+  font-size: 16px;
+  line-height: 1.2;
+  display: block;
+  &--extra-space {
+    margin-bottom: 10px;
+  }
+}
+
+.nav-dash {
+  font-size: 20px;
+  margin-bottom: 3px;
+  &--last {
+    margin-top: 40px;
+  }
+
+}
+
+.nav__link {
+  color: $yellow;
+  text-decoration: none;
+  .contact & {
+    color: $blue;
+  }
+}
+
+.nav__link--sub {
+  margin-bottom: 10px;
+}

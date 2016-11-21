@@ -1,0 +1,68 @@
+/* layout/_layout.scss */
+.wrapper {
+  @include wrapper('1400px');
+  &--main {
+    display: flex;
+    margin-top: 10vh;
+  }
+  .front &,
+  &--landing-full {
+    margin-top: 0;
+    #header {
+      margin-top: 10vh;
+      z-index: 1;
+    }
+    main {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: 100%;
+    }
+  }
+}
+
+main {
+  flex: 0 0 67em;
+  max-width: 67em;
+  position: relative;
+  padding-bottom: 10vh;
+}
+
+#header {
+  flex: 0 0 170px;
+  margin-right: 7.5em;
+}
+
+.inner,
+.contact {
+  padding-bottom: 50px;
+  #header {
+    flex: 0 0 20px;
+    margin-right: 10px;
+    @include respond-to(medium) {
+      flex: 0 0 170px;
+      margin-right: 7.5em;
+    }
+  }
+  main {
+    flex: 1 1 48%;
+    width: 48%;
+    @include respond-to(compact) {
+      padding-right: 5em;
+    }
+    @include respond-to(medium) {
+      padding-right: 10em;
+    }
+  }
+}
+
+.section {
+  position: relative;
+}
+
+.full-height {
+  height: 100vh;
+  position: relative;
+}

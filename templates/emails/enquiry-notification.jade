@@ -1,0 +1,12 @@
+extends layouts/base
+
+block content
+	h1 Hi *|first_name|*,
+	p.text-larger An enquiry was just submitted to #{brand}:
+	if enquiry.email
+		p.text-larger From:
+			if enquiry.email
+				| <a href="mailto:#{enquiry.email}">#{enquiry.email}</a>
+	p.text-muted Sent #{enquiry._.createdAt.format()}
+	p &nbsp;
+	a(href='/keystone/enquiries/#{enquiry.id}') Open in Keystone

@@ -1,0 +1,39 @@
+{% extends "layouts/default.html" %}
+
+{% block intro %}
+{% endblock %}
+
+{% block content %}
+	<section class="contact">
+    <div class="contact__top-image">
+      <img src="{{data.contact['top image'].url}}" alt="">
+    </div>
+    <div class="contact__info">
+      <div class="contact__info__item">{{ data.contact.about }}</div>
+      <div class="contact__info__item">{{ data.contact.address }}</div>
+      <div class="contact__info__item contact__info__item--social">{{ data.contact.social }}</div>
+    </div>
+    <section class="subscribe">
+      <h2>Subscribe to our mailing list</h2>
+      {% if enquirySubmitted %}
+        <h3>Thanks you.</h3>
+      {% else %}
+        <form method="post">
+          <input type="hidden" name="action" value="contact">
+          {% set class = ( "has-error" if validationErrors.email else "" ) %}
+          <div class="form-group {{ class }}">
+            <label>Email</label>
+            <input type="email" name="email" value="{{ formData.email }}" class="form-control">
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+        </form>
+      {% endif %}
+    </section>
+
+    <div class="contact__bottom-image">
+      <img src="{{data.contact['bottom image'].url}}" alt="">
+    </div>
+  </section>
+{% endblock %}

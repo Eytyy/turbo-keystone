@@ -1,0 +1,17 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+	<section class="space">
+    <div class="slider slider--full slider--landing">
+      {% for image in data.spacelanding.image %}
+      <div class="slide">
+        <div class="slide-bg" style="background-image: url('{{image.limit(1900)}}')"></div>
+      </div>
+      {% endfor %}
+    </div>
+	</section>
+{% endblock %}
+
+{% block js %}
+<script src="/js/slick.min.js"></script>
+{% endblock %}

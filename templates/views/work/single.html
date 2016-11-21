@@ -1,0 +1,30 @@
+{% extends "layouts/default.html" %}
+{% set post = data.workPost %}
+
+{% block content %}
+  <article class="post post--work">
+    {% if post['media type'] == 'Video' %}
+      <div class="video-wrapper">
+        <video class="video" src="{{s3Path}}resources/front-video/{{post['video'].filename}}" poster="{{post['video image'].url}}"></video>
+        <i class="playVid"></i>
+      </div>
+    {% else %}
+      {% if (post.image | length) %}
+        <div class="slider slider--space slider--post">
+          {% include 'mixins/slider.html' %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <div class="desc">{{post.description}}</div>
+    {% if (post.image | length) > 1 %}
+      <div class="slider__nav">
+        <div class="slider__nav__item slider__nav__item--count">
+          (<span class="currentSlide"></span>/<span class="slidesCount"></span>)
+        </div>
+        <div class="slider__nav__item slider__nav__item--dir slider__nav__item--back"><</div>
+        <div class="slider__nav__item slider__nav__item--dir slider__nav__item--next">></div>
+      </div>
+    {% endif %}
+  </article>
+{% endblock %}

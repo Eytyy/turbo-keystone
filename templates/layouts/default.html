@@ -1,0 +1,70 @@
+{% import "mixins/flash-messages.html" as FM %}
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>{{ title|default("turbo") }}</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    {% if env == 'development' %}
+      <link href="/styles/slick.css" rel="stylesheet">
+		  <link href="/styles/main.css" rel="stylesheet">
+    {% else %}
+      <link href="/styles/styles.min.css" rel="stylesheet">
+    {% endif %}
+
+		{# This file provides the default styling for the KeystoneJS Content Editor #}
+		{% if user and user.canAccessKeystone %}
+			<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
+		{% endif %}
+
+		{# Include template-specific stylesheets by extending the css block #}
+		{% block css %}{% endblock %}
+
+		{% block head %}{% endblock %}
+	</head>
+	<body class="{{section}} {% if inner %}inner{% endif %}">
+    <div class="messages-wrapper">
+      {% block intro %}{% endblock %}
+      {{ FM.flashMessages(messages) }}
+    </div>
+    <div class="wrapper wrapper--main {% if landingFull %}wrapper--landing-full{% endif %}">
+      {# HEADER #}
+      <div id="header">
+        <div class="header__top">
+          <span class="nav-toggle">
+            <span class="dash"></span>
+            <span class="dash"></span>
+            <span class="dash"></span>
+          </span>
+        </div>
+        {% include 'partials/nav.html' %}
+      </div>
+
+      {# BODY #}
+      <main role="main">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+
+		{# JAVASCRIPT #}
+
+    {% if env == 'development' %}
+      <script src="/js/jquery/jquery-1.11.3.min.js"></script>
+      <script src="/js/vendor/slick.min.js"></script>
+      <script src="/js/main.js"></script>
+    {% else %}
+      <script src="/js/vendor/jquery-1.11.3.min.js"></script>
+      <script src="/js/vendor/slick.min.js"></script>
+      <script src="/js/main.min.js"></script>
+    {% endif %}
+
+		{% if user and user.canAccessKeystone %}
+			<script src="/keystone/js/content/editor.js"></script>
+		{% endif %}
+	</body>
+</html>

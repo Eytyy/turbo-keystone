@@ -1,0 +1,7 @@
+{% for image in post.image %}
+<div class="slide">
+  <a href="{{image.url}}" target="_blank">
+    <img src="{{image.limit(570, 380)}}" />
+  </a>
+</div>
+{% endfor %}

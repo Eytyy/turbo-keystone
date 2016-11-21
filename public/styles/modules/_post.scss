@@ -1,0 +1,27 @@
+p {
+  margin-bottom: 1.3em;
+}
+
+.video-wrapper {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.video {
+  width: 100%;
+}
+
+.playVid {
+  display: block;
+  position: absolute;
+  border: 10px solid transparent;
+  border-left: 15px solid $yellow;
+  top: 20px;
+  right: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  &.playing {
+    border: 10px solid #FFF000;
+    right: 20px;
+  }
+}

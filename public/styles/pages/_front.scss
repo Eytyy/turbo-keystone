@@ -1,0 +1,36 @@
+/* pages/_front.scss */
+.front {
+  background: #000;
+}
+.intro-loop {
+  @extend %setFullsizeComponent;
+  width: 100%;
+  height: 100vh;
+  top: 50%;
+  transform: translateY(-50%);
+  &::-webkit-media-controls-start-playback-button {
+      display: none!important;
+      -webkit-appearance: none;
+  }
+}
+.intro-placeholder {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-aspect-ratio: 16/9) {
+  .intro-loop {
+    height: 300vh;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .intro-loop {
+    width: 300%;
+    left: -100%;
+  }
+}
+.loader {
+  display: none;
+}

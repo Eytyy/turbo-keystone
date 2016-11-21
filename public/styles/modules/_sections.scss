@@ -1,0 +1,12 @@
+.space {
+  background: $blue;
+}
+.work {
+  background: $pink;
+}
+.contact {
+  background: $yellow;
+  .wrapper--main {
+    height: 100vh;
+  }
+}

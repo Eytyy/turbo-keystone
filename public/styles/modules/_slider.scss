@@ -1,0 +1,85 @@
+.slider {
+  min-height: 100px;
+  @include respond-to(compact) {
+    min-height: 200px;
+  }
+}
+
+.slider--post {
+  margin-bottom: 20px;
+  @include respond-to(compact) {
+    margin-bottom: 40px;
+  }
+}
+
+.slide-bg {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide,
+.slide a {
+  outline: 0;
+}
+
+.slider__nav {
+  position: absolute;
+  right: 0;
+  top:  0;
+  color: $yellow;
+  text-align: right;
+  z-index: 2;
+  height: 130px;
+  .work & {
+    background: $pink;
+    padding-left: 5px;
+  }
+  .space & {
+    background: $blue;
+    padding-left: 5px;
+  }
+  @include respond-to(compact) {
+    background: none;
+    padding-left: 0;
+    text-align: left;
+  }
+}
+
+
+.slider__nav__item--count {
+  font-size: 14px;
+  margin-bottom: 35px;
+  @include respond-to(medium) {
+    font-size: 18px;
+  }
+}
+
+.slider__nav__item--dir {
+  font-size: 3.2em;
+  cursor: pointer;
+  @include respond-to(medium) {
+    font-size: 3.6em;
+  }
+}
+
+.slider__nav__item--back {
+  margin-bottom: 20px;
+}
+
+.desc {
+  font-size: 1.3em;
+  line-height: 1.35em;
+  max-width: 520px;
+  br {
+    line-height: 30px;
+  }
+  .link {
+    display: block;
+    color: $blue;
+  }
+  @include respond-to(medium) {
+    font-size: 1.5em;
+  }
+}
