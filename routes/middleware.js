@@ -26,7 +26,7 @@ exports.initLocals = function (req, res, next) {
     { label: 'Space', key: 'space', href: '/space' },
 	];
 
-  res.locals.s3Path = 'https://s3.amazonaws.com/turrrbo.com/';
+  res.locals.s3Path = 'https://s3-us-west-2.amazonaws.com/turrrbo.com/';
 	res.locals.user = req.user;
 
   keystone.list('Work').model.find().exec(function(err, results) {
