@@ -5,7 +5,7 @@
   <article class="post post--work">
     {% if post['media type'] == 'Video' %}
       <div class="video-wrapper">
-        <video class="video" src="{{s3Path}}resources/front-video/{{post['video'].filename}}" poster="{{post['video image'].url}}"></video>
+        <video class="video" src="{{s3Path}}posts/{{post['video'].filename}}" poster="{{post['video image'].url}}"></video>
         <i class="playVid"></i>
       </div>
     {% else %}
