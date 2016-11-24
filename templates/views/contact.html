@@ -9,9 +9,9 @@
       <img src="{{data.contact['top image'].url}}" alt="">
     </div>
     <div class="contact__info">
-      <div class="contact__info__item">{{ data.contact.about }}</div>
-      <div class="contact__info__item">{{ data.contact.address }}</div>
-      <div class="contact__info__item contact__info__item--social">{{ data.contact.social }}</div>
+      <div class="contact__info__item">{{ data.contact.about | safe}}</div>
+      <div class="contact__info__item">{{ data.contact.address | safe}}</div>
+      <div class="contact__info__item contact__info__item--social">{{ data.contact.social | safe }}</div>
     </div>
     <section class="subscribe">
       <h2>Subscribe to our mailing list</h2>

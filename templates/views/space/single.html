@@ -7,7 +7,7 @@
         {% include 'mixins/slider.html' %}
       </div>
     {% endif %}
-    <div class="desc">{{post.description}}</div>
+    <div class="desc">{{post.description | safe}}</div>
     {% if (post.image | length) > 1 %}
       <div class="slider__nav">
         <div class="slider__nav__item slider__nav__item--count">
