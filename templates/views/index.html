@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
 {% block content %}
-  <video class="intro-loop" data-src="{{s3Path}}resources/front-video/{{data.video.video.filename}}" loop autoplay playsinline></video>
+  <video class="intro-loop" data-src="{{s3Path}}resources/front-video/{{data.video.video.filename}}" loop autoplay playsinline poster="{{data.video.placeholder.url}}"></video>
   <div class="intro-placeholder" style="background-image: url('{{data.video.placeholder.url}}');" ></div>
 {% endblock %}
