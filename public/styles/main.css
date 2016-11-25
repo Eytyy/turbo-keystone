@@ -82,8 +82,6 @@ h1, h2, h3, h4 {
     .wrapper {
       padding: 0 7.5em; } }
   .wrapper--main {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-top: 10vh; }
   .front .wrapper, .wrapper--landing-full {
@@ -100,17 +98,13 @@ h1, h2, h3, h4 {
       max-width: 100%; }
 
 main {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 67em;
-          flex: 0 0 67em;
+  flex: 0 0 67em;
   max-width: 67em;
   position: relative;
   padding-bottom: 10vh; }
 
 #header {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 170px;
-          flex: 0 0 170px;
+  flex: 0 0 170px;
   margin-right: 7.5em; }
 
 .inner,
@@ -118,22 +112,16 @@ main {
   padding-bottom: 50px; }
   .inner #header,
   .contact #header {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 20px;
-            flex: 0 0 20px;
+    flex: 0 0 20px;
     margin-right: 10px; }
     @media (min-width: 970px) {
       .inner #header,
       .contact #header {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 170px;
-                flex: 0 0 170px;
+        flex: 0 0 170px;
         margin-right: 7.5em; } }
   .inner main,
   .contact main {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 48%;
-            flex: 1 1 48%;
+    flex: 1 1 48%;
     width: 48%; }
     @media (min-width: 568px) {
       .inner main,
@@ -187,19 +175,14 @@ main {
 
 .inner .website-navigation,
 .contact .website-navigation {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.2s linear;
-  transition: -webkit-transform 0.2s linear;
+  transform: translateX(-100%);
   transition: transform 0.2s linear;
-  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
   display: block;
   width: 0;
   overflow: hidden; }
   .inner .website-navigation .nav__item,
   .contact .website-navigation .nav__item {
     opacity: 0;
-    -webkit-transition: opacity 0.5s linear;
     transition: opacity 0.5s linear; }
 
 @media (min-width: 970px) {
@@ -209,8 +192,7 @@ main {
   .inner .website-navigation,
   .contact .website-navigation {
     width: auto;
-    -webkit-transform: translate(0);
-            transform: translate(0); }
+    transform: translate(0); }
     .inner .website-navigation .nav__item,
     .contact .website-navigation .nav__item {
       opacity: 1; } }
@@ -336,7 +318,6 @@ p {
   top: 20px;
   right: 5px;
   cursor: pointer;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out; }
   .playVid.playing {
     border: 10px solid #FFF000;
@@ -350,8 +331,7 @@ p {
   width: 100%;
   height: 100vh;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%); }
+  transform: translateY(-50%); }
   .intro-loop::-webkit-media-controls-start-playback-button {
     display: none !important;
     -webkit-appearance: none; }
@@ -377,10 +357,9 @@ p {
 .work .wrapper--landing-full .slider {
   position: absolute;
   left: 50%;
-  max-width: 67em;
+  max-width: 80vh;
   top: 10vh;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 100%; }
 
 .contact__top-image {
@@ -470,12 +449,8 @@ p {
   z-index: 1;
   width: 210px;
   padding: 18vh 20px 0 0;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: width 0.2s linear, -webkit-transform 0.2s linear;
-  transition: width 0.2s linear, -webkit-transform 0.2s linear;
+  transform: translateX(0);
   transition: transform 0.2s linear, width 0.2s linear;
-  transition: transform 0.2s linear, width 0.2s linear, -webkit-transform 0.2s linear;
   overflow-y: scroll;
   left: 0;
   padding-left: 20px; }
@@ -491,5 +466,3 @@ p {
 
 .contact.js-menuIsActive #header .dash {
   background: #FFFF00; }
-
-/*# sourceMappingURL=main.css.map */

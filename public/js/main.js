@@ -110,25 +110,25 @@ const APP = (() => {
 
     if (document.body.classList.contains('front')) {
       const loop = document.querySelector('.intro-loop');
-      loop.src = loop.dataset.src;
+      // loop.src = loop.dataset.src;
       if (window.innerWidth < 1020) {
         return true;
       }
-      const playPromise = loop.play();
+      // const playPromise = loop.play();
 
       // In browsers that don’t yet support this functionality,
       // playPromise won’t be defined.
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          // Automatic playback started!
-          console.log('yes');
-        }).catch((error) => {
-          console.log('nope');
-          console.log(error);
-          // Automatic playback failed.
-          // Show a UI element to let the user manually start playback.
-        });
-      }
+      // if (playPromise !== undefined) {
+      //   playPromise.then(() => {
+      //     // Automatic playback started!
+      //     console.log('yes');
+      //   }).catch((error) => {
+      //     console.log('nope');
+      //     console.log(error);
+      //     // Automatic playback failed.
+      //     // Show a UI element to let the user manually start playback.
+      //   });
+      // }
     }
 
     domMap.menuBtn.on('click', onMenuBtnClick);

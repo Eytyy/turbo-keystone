@@ -377,7 +377,7 @@ p {
 .work .wrapper--landing-full .slider {
   position: absolute;
   left: 50%;
-  max-width: 67em;
+  max-width: 80vh;
   top: 10vh;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
