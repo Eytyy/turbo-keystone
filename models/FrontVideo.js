@@ -12,19 +12,18 @@ var Video = new keystone.List('FrontVideo', {
   },
   plural: 'Front Video',
   nocreate: true,
-  nodelete: true,
 });
 
 Video.add({
-  title: {
+  'title': {
     type: String,
     required: true,
   },
-  image: {
+  'image': {
     type: Types.CloudinaryImage,
     folder: 'front-video',
   },
-  video: { 
+  'video': { 
     type: String,
   },
 });
