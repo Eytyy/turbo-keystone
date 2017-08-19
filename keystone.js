@@ -14,6 +14,7 @@ var nunjucks = require('nunjucks');
 keystone.init({
   'name': 'turbo',
 	'brand': 'turbo',
+	'file limit': '50MB',
 
 	'sass': 'public',
   'static': process.env.NODE_ENV === 'development' ? 'public' : 'dist',
