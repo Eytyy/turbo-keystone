@@ -1,17 +1,6 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-var storage = new keystone.Storage({
-  adapter: require('keystone-storage-adapter-s3'),
-  s3: {
-    key: process.env.AWSAccessKeyId,
-    secret: process.env.AWSSecretKey,
-    bucket: process.env.S3BucketName,
-    region: 'us-west-2',
-    path: '/resources/front-video',
-  },
-});
-
 var Video = new keystone.List('FrontVideo', {
   autokey: {
     path: 'slug',
@@ -31,12 +20,13 @@ Video.add({
     type: String,
     required: true,
   },
-  placeholder: {
+  image: {
     type: Types.CloudinaryImage,
-    folder: 'intro',
-    autoCleanup : true,
+    folder: 'front-video',
   },
-  video: { type: Types.File, storage: storage },
+  video: { 
+    type: String,
+  },
 });
 
 Video.defaultColumns = 'title';
