@@ -26,6 +26,9 @@ Video.add({
   'video': { 
     type: String,
   },
+  'color': {
+    type: String,
+  }
 });
 
 Video.defaultColumns = 'title';

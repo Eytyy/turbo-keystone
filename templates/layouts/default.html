@@ -23,7 +23,14 @@
 		{% endif %}
 
 		{# Include template-specific stylesheets by extending the css block #}
-		{% block css %}{% endblock %}
+    {% block css %}
+      <style>
+        .front .nav__link,
+        .front .website-navigation {
+          color: {{color}}
+        }
+      </style>
+    {% endblock %}
 
 		{% block head %}{% endblock %}
 	</head>
